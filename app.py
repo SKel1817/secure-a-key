@@ -32,6 +32,9 @@ def simulate_cracking_time(password):
     time_to_crack = (length * complexity) / 2  # Simplified formula for demonstration
     return max(1, time_to_crack)  # Ensure at least 1 second is shown for simplicity
 
+@app.route('/twofactor')
+def twofactor():
+    return render_template('twofactor.html')
 if __name__ == '__main__':
     app.run()
 
