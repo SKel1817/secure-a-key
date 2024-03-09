@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two-Factor Authentication Game</title>
+    <style>
+        /* Add your CSS styling here */
+        .success { color: green; }
+        .failure { color: red; }
+        #twoFactorSection { display: none; } /* Initially hide the 2FA section */
+    </style>
+</head>
+<body>
+    <h2>Two-Factor Authentication Simulator</h2>
+    
+    <div id="loginForm">
+        <p>Enter password:</p>
+        <input type="password" id="password">
+        
+        <button onclick="checkPassword()">Submit Password</button>
+    </div>
+    
+    <div id="twoFactorSection">
+        <p>Enter 2FA code:</p>
+        <input type="text" id="code">
+        
+        <button onclick="attemptLogin()">Attempt Login</button>
+    </div>
+    
+    <div id="result"></div>
+    
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            
+            // Simplified check for demonstration (normally, this would be more secure)
+            if(password == "correctPassword") {
+                // If password is correct, show the 2FA section
+                document.getElementById("twoFactorSection").style.display = "block";
+            } else {
+                // If password is incorrect, show an error and keep the 2FA section hidden
+                document.getElementById("result").innerHTML = "<p class='failure'>Incorrect password. Please try again.</p>";
+                document.getElementById("twoFactorSection").style.display = "none";
+            }
+        }
+
+        function attemptLogin() {
+            const code = document.getElementById("code").value;
+            
+            // Simplified check for demonstration
+            if(code === "123456") {
+                document.getElementById("result").innerHTML = "<p class='success'>Login successful!</p>";
+            } else {
+                document.getElementById("result").innerHTML = "<p class='failure'>Incorrect 2FA code.</p>";
+            }
+        }
+    </script>
+</body>
+</html>
