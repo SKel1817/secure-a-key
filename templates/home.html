@@ -1,66 +1,57 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
+  <head>
+    <style>
+      * {
+        background-image: url("../static/bg.svg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        overflow-y: hidden;
+        position: relative;
+      }
 
-<body style="background-color:powderblue">
+      body {
+        /* margin: 0;
+        padding: 0; */
+        font-family: "Roboto", sans-serif;
+      }
 
-<h1 style="font-size:300%; color:red; text-align:center;">WANTED</h1>
-<h2 style="background-color:white; text-align:center; font-family:monospace;">Frog dork<h2>
+      button {
+        background: white;
+        border: none;
+        font-size: 0;
+      }
 
+      .lScreen {
+        position: absolute;
+        left: 330px;
+        top: 180px;
+        height: 160px;
+        width: 390px;
+      }
 
-<p title="This is a wanted criminal please help us" style="color:green; font-family:cursive;">This frog is wanted for:<br> 4 counts of arson and 3 counts of murder</p>
+      .rScreen {
+        position: absolute;
+        left: 750px;
+        top: 180px;
+        height: 160px;
+        width: 390px;
+      }
 
-<a href="https://en.wikipedia.org/wiki/Frog">
-</a>
-
-<button onclick="window.location.href ='https://forms.gle/Pgp35qhr1ycyoDuUA'">REPORT THE FROG</button>
-<button type="button" onclick="document.write(5+6)">What does this do?</button>
-
-<a href="https://creativetechguy.com/fishfeeder" target="_blank">Feed a fucking fish while your at it</a>
-<hr>
-<pre>
-WOW THIS FUCKING FROG
-
-HAS NO IDEA 
-
-WHATS COMING, THIS IS 
-
-THE BEST WANTED POSTER EVER
-</pre>
-<hr>
-<pre>
-<b>This <sup>frog</sup> is agaisnt the kitchen <sub>floor</sub></b>
-<br>
-<strong>This text is strong like <del>coffee</del> <ins>Chai</ins></strong>
-<i>How did I never do this before, its so cool</i>
-<em>SO FUCKING <mark>COOL</mark></em>
-<small>I don't what else to do here, heres some small text I guess</small>
-</pre>
-
-<hr>
-<head>
-<style>
-p {color: red}
-blockquote {color:brown}
-</style>
-</head>
-<p>Here is a quote from <cite><abbr title="the magnus archives">TMA</abbr></cite>, particualr the episode <mark>DIG</mark></p>
-
-<blockquote cite="https://rustyquill.com/show/the-magnus-archives/">
-Perhaps they sensed it, that need inside of us. Above us, you see, there’s only the sky, the infinite, a void of space and emptiness so incredible that to think of it in detail is to overwhelm the mind. But down, down into the earth. Through the many layers of this globe, this sphere built and crusted upon a single, beating point. The centre of the universe for each and every one of us, that glorious convergence from which everything, everywhere, is ‘up’. To reach it, to approach that source, that rolling, molten centre of it all, the only thing you have to do is <mark>dig</mark>.
-</blockquote>
-
-<br>
-
-<p>As they say: <q>dig</q><p>
-<bdo dir="rtl">DIG DIG DIG DIG DIG DIG DIG</bdo>
-
-<address>
-Written by Johnathan Sims.<br>
-Visit them at:<br>
-RustyQuill.com<br>
-somewhere in london<br>
-</address>
-
-<!--comment<p>WAHOO</p>-->
-</body>
+      .books {
+        position: absolute;
+        left: 950px;
+        top: 450px;
+        height: 75px;
+        width: 100px;
+      }
+    </style>
+    <title>Secure-A-Key</title>
+  </head>
+  <body>
+    <button type="button" class="lScreen">TEMP</button>
+    <button type="button" class="rScreen">TEMP</button>
+    <button type="button" class="books">TEMP</button>
+  </body>
 </html>
