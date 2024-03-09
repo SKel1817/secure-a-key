@@ -1,39 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Phishing Mini Game</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        #emailContainer, #answerContainer {
-            margin-bottom: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            margin-right: 10px;
-            cursor: pointer;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phishing Email Game</title>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .email-client-container {
+        background-image: url('templates/assets/email.png');
+        background-size: cover;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .email-content {
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 50px; /* Adjust as per your layout */
+        width: 50%; /* Adjust as per your layout */
+    }
+    .email-subject, .email-body {
+        margin-bottom: 20px;
+    }
+    .email-subject {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .decision-buttons {
+        display: flex;
+        justify-content: space-around;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+        margin: 5px;
+        cursor: pointer;
+    }
+    /* Add further styling as needed */
+</style>
 </head>
 <body>
-    <h1>Phishing Mini Game</h1>
-    
-    <div id="emailContainer">
-        <h2>Check the email below and decide if it's a phishing email or not:</h2>
-        <strong>Subject:</strong><p id="emailSubject"></p>
-        <strong>Body:</strong><p id="emailBody"></p>
+
+<div class="email-client-container">
+    <div class="email-content">
+        <div class="email-subject" id="emailSubject">[Subject Placeholder]</div>
+        <div class="email-body" id="emailBody">[Body Placeholder]</div>
+        <div class="decision-buttons">
+            <button onclick="checkAnswer(true)">Yes</button>
+            <button onclick="checkAnswer(false)">No</button>
+        </div>
     </div>
-    
-    <div id="answerContainer">
-        <h2>Is this a phishing email?</h2>
-        <button onclick="checkAnswer(true)">Yes</button>
-        <button onclick="checkAnswer(false)">No</button>
-    </div>
-    
-    <div id="scoreContainer">
-        <strong>Score:</strong><span id="score">0</span>
-    </div>
+</div>
 
     <script>
         let score = 0;
