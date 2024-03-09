@@ -37,26 +37,42 @@
 
     <script>
         let score = 0;
+        let emailCount = 0;
+        let usedEmails = [];
 
         async function fetchEmails() {
-            const response = await fetch('C:\Users\niels\OneDrive\Documents\github\secure-a-key\templates\emails.json');
+            const response = await fetch('/emails.json');
             return response.json();
         }
 
         function updateScore(isCorrect) {
             if (isCorrect) {
                 score++;
-                alert("Correct! It's a phishing email.");
+                alert("Correct!");
             } else {
-                alert("Wrong! It's not a phishing email.");
+                alert("Wrong!");
             }
             document.getElementById("score").textContent = score.toString();
             generateEmail();
         }
 
         async function generateEmail() {
+            if (emailCount >= 10) {
+                alert("Congrats! You completed the phishing mini game.");
+                window.location.href = "/";
+                return;
+            }
+
             const { emails } = await fetchEmails();
-            const randomIndex = Math.floor(Math.random() * emails.length);
+            let randomIndex = Math.floor(Math.random() * emails.length);
+
+            while (usedEmails.includes(randomIndex)) {
+                randomIndex = Math.floor(Math.random() * emails.length);
+            }
+
+            usedEmails.push(randomIndex);
+            emailCount++;
+
             const email = emails[randomIndex];
             document.getElementById("emailSubject").textContent = email.subject;
             document.getElementById("emailBody").textContent = email.body;

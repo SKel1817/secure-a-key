@@ -1,28 +1,78 @@
 {
     "emails": [
         {
-            "subject": "Important Account Update",
-            "body": "Dear customer, we have detected suspicious activity on your account. Please click the link below to verify your information.",
+            "subject": "Suspicious Activity Detected",
+            "body": "Dear customer, we have detected suspicious activity on your account. Please take immediate action to secure your account.",
             "isPhishing": true
         },
         {
-            "subject": "Urgent Payment Request",
-            "body": "Hello, I hope this email finds you well. We urgently need you to make a payment. Please find the attached invoice for more details.",
+            "subject": "Payment Confirmation",
+            "body": "Hello, this email is to confirm the successful payment for your recent purchase. Thank you for your business.",
             "isPhishing": false
         },
         {
-            "subject": "Security Alert: Unauthorized Access",
-            "body": "Dear user, we have detected unauthorized access to your account. Please reset your password immediately by clicking the link below.",
+            "subject": "Account Verification Required",
+            "body": "Dear user, we require you to verify your account information to ensure the security of your account.",
             "isPhishing": true
         },
         {
-            "subject": "Congratulations! You've Won a Prize",
-            "body": "Congratulations! You've been selected as the lucky winner of our prize. Please provide your personal information to claim your reward.",
+            "subject": "Exclusive Offer for You",
+            "body": "Congratulations! As a valued customer, we have an exclusive offer just for you. Don't miss out!",
             "isPhishing": true
         },
         {
-            "subject": "Important System Update",
-            "body": "Dear user, we are performing a system update. Please log in to your account and follow the instructions to complete the process.",
+            "subject": "Important Announcement",
+            "body": "Dear user, we have an important announcement regarding changes to our services. Please read the attached document for more information.",
+            "isPhishing": false
+        },
+        {
+            "subject": "Account Upgrade",
+            "body": "Hello, we are pleased to inform you that your account has been upgraded to our premium service. Enjoy the additional benefits!",
+            "isPhishing": false
+        },
+        {
+            "subject": "Password Reset Request",
+            "body": "Dear user, we have received a request to reset your account password. If you did not make this request, please ignore this email.",
+            "isPhishing": true
+        },
+        {
+            "subject": "Limited Time Offer",
+            "body": "Don't miss out on our limited time offer! Get exclusive discounts on our products and services.",
+            "isPhishing": false
+        },
+        {
+            "subject": "Important Account Information",
+            "body": "Dear customer, we need you to update your account information to ensure the accuracy of your records.",
+            "isPhishing": true
+        },
+        {
+            "subject": "Invitation to Exclusive Event",
+            "body": "You are cordially invited to our exclusive event. Please RSVP to secure your spot.",
+            "isPhishing": false
+        },
+        {
+            "subject": "Account Security Alert",
+            "body": "Dear user, we have detected a potential security breach in your account. Please review your recent activity and take necessary precautions.",
+            "isPhishing": true
+        },
+        {
+            "subject": "New Product Announcement",
+            "body": "Introducing our latest product! Be the first to experience its innovative features.",
+            "isPhishing": false
+        },
+        {
+            "subject": "Account Termination Notice",
+            "body": "Dear user, we regret to inform you that your account will be terminated due to violation of our terms of service.",
+            "isPhishing": true
+        },
+        {
+            "subject": "Special Discount for You",
+            "body": "As a valued customer, we are offering you a special discount on your next purchase. Don't miss this opportunity!",
+            "isPhishing": false
+        },
+        {
+            "subject": "Important Privacy Policy Update",
+            "body": "We have updated our privacy policy to better protect your personal information. Please review the changes.",
             "isPhishing": false
         }
     ]
