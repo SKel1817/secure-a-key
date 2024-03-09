@@ -1,5 +1,6 @@
 from flask import Flask,render_template, send_from_directory
 from flask import request
+from waitress import serve
 app = Flask(__name__)
 
 @app.route("/")
@@ -36,6 +37,6 @@ def simulate_cracking_time(password):
 def twofactor():
     return render_template('twofactor.html')
 if __name__ == '__main__':
-    app.run()
+    serve(app, host='0.0.0.0', port=8080)
 
 
