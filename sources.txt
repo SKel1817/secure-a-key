@@ -1,0 +1,2 @@
+for flask set-up: https://code.visualstudio.com/docs/python/tutorial-flask
+https://codeforgeek.com/render-html-file-in-flask/
