@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Mini Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #emailContainer, #answerContainer {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Phishing Mini Game</h1>
+    
+    <div id="emailContainer">
+        <h2>Check the email below and decide if it's a phishing email or not:</h2>
+        <strong>Subject:</strong><p id="emailSubject"></p>
+        <strong>Body:</strong><p id="emailBody"></p>
+    </div>
+    
+    <div id="answerContainer">
+        <h2>Is this a phishing email?</h2>
+        <button onclick="checkAnswer(true)">Yes</button>
+        <button onclick="checkAnswer(false)">No</button>
+    </div>
+    
+    <div id="scoreContainer">
+        <strong>Score:</strong><span id="score">0</span>
+    </div>
+
+    <script>
+        let score = 0;
+
+        async function fetchEmails() {
+            const response = await fetch('C:\Users\niels\OneDrive\Documents\github\secure-a-key\templates\emails.json');
+            return response.json();
+        }
+
+        function updateScore(isCorrect) {
+            if (isCorrect) {
+                score++;
+                alert("Correct! It's a phishing email.");
+            } else {
+                alert("Wrong! It's not a phishing email.");
+            }
+            document.getElementById("score").textContent = score.toString();
+            generateEmail();
+        }
+
+        async function generateEmail() {
+            const { emails } = await fetchEmails();
+            const randomIndex = Math.floor(Math.random() * emails.length);
+            const email = emails[randomIndex];
+            document.getElementById("emailSubject").textContent = email.subject;
+            document.getElementById("emailBody").textContent = email.body;
+
+            document.querySelectorAll("#answerContainer button").forEach(button => {
+                button.onclick = () => updateScore(email.isPhishing === (button.textContent === "Yes"));
+            });
+        }
+        
+        generateEmail();
+    </script>
+</body>
+</html>

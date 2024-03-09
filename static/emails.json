@@ -1,0 +1,29 @@
+{
+    "emails": [
+        {
+            "subject": "Important Account Update",
+            "body": "Dear customer, we have detected suspicious activity on your account. Please click the link below to verify your information.",
+            "isPhishing": true
+        },
+        {
+            "subject": "Urgent Payment Request",
+            "body": "Hello, I hope this email finds you well. We urgently need you to make a payment. Please find the attached invoice for more details.",
+            "isPhishing": false
+        },
+        {
+            "subject": "Security Alert: Unauthorized Access",
+            "body": "Dear user, we have detected unauthorized access to your account. Please reset your password immediately by clicking the link below.",
+            "isPhishing": true
+        },
+        {
+            "subject": "Congratulations! You've Won a Prize",
+            "body": "Congratulations! You've been selected as the lucky winner of our prize. Please provide your personal information to claim your reward.",
+            "isPhishing": true
+        },
+        {
+            "subject": "Important System Update",
+            "body": "Dear user, we are performing a system update. Please log in to your account and follow the instructions to complete the process.",
+            "isPhishing": false
+        }
+    ]
+}
