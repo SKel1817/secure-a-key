@@ -4,61 +4,144 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Phishing Email Game</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
     body, html {
         height: 100%;
         margin: 0;
-        font-family: Arial, sans-serif;
+        font-family: 'Roboto', sans-serif;
+        background: url('../static/email.png');
     }
-    .email-client-container {
-        background-image: url('../static/email.png');
-        background-size: cover;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .text {
         text-align: center;
     }
-    .email-content {
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 8px;
-        padding: 20px;
-        margin-top: 50px; /* Adjust as per your layout */
-        width: 50%; /* Adjust as per your layout */
+    .game-title {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 10px;
     }
-    .email-subject, .email-body {
+    .game-instructions {
+        text-align: center;
+        max-width: 600px;
         margin-bottom: 20px;
     }
+    .email-client-container {
+        background-size: contain;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 50px 20px;
+    }
+    .email-content {
+        width: 100%;
+        max-width: 600px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+    .email-subject, .email-body {
+        text-align: left;
+        padding: 15px;
+        background: #f9f9f9;
+        margin: 10px 0;
+        border-radius: 4px;
+    }
     .email-subject {
-        font-size: 1.2em;
-        font-weight: bold;
+        font-weight: 700;
     }
     .decision-buttons {
         display: flex;
         justify-content: space-around;
+        margin-top: 20px;
     }
     button {
-        padding: 10px 20px;
-        font-size: 1em;
-        margin: 5px;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 4px;
+        transition: all 0.3s ease;
         cursor: pointer;
     }
-    /* Add further styling as needed */
+    button:hover {
+        transform: scale(1.05);
+    }
+    .yes-button {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .no-button {
+        background-color: #f44336;
+        color: white;
+    }
+    #scoreContainer {
+        font-size: 1.4em;
+        color: #333;
+        margin-top: 15px;
+    }
+    .result-message {
+        display: none;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+    }
+    .correct {
+        background-color: #4CAF50;
+    }
+    .incorrect {
+        background-color: #f44336;
+    }
+    .email-client-container .text{
+        transform:translatex(-376px) translatey(173px);
+        width:464px;
+        box-shadow:0px 0px 3px 0px #000000;
+        background-color:#d2eedd;
+    }
+
+
+    .email-client-container .email-content{
+        transform:translatex(221px) translatey(-149px);
+        background-color:#cdd9d9;
+    }
+
 </style>
 </head>
 <body>
 
 <div class="email-client-container">
+    <div class="text">
+        <h1 class="game-title">Phishing Email Game</h1>
+            <div class="game-instructions">
+                <p>Read the email and decide if it's a phishing email or not. 
+                    Click "Yes" if it's a phishing email, and "No" if it's not. You will get 10 emails. 
+                    To move on, you need to correctly identify at least 7 out of 10. 
+                    If you correctly identify all 10, you will earn a badge!</p>
+                <p>Here are some ways to identify phishing emails:</p>
+                <ul>
+                    <li>Pay attention to grammar and spelling mistakes, as well as generic greetings or urgent requests.</li>
+                    <li>Be skeptical of emails requesting money, login credentials, or other personal information without a valid reason.</li>
+                    <li>Legitimate organizations usually don't ask for sensitive information via email.</li>
+                </ul>
+            </div>  
+    </div>
     <div class="email-content">
-        <div class="email-subject" id="emailSubject">[Subject Placeholder]</div>
-        <div class="email-body" id="emailBody">[Body Placeholder]</div>
+        <div class="email-subject" id="emailSubject">Subject goes here...</div>
+        <div class="email-body" id="emailBody">Body content goes here...</div>
         <div class="decision-buttons">
-            <button onclick="checkAnswer(true)">Yes</button>
-            <button onclick="checkAnswer(false)">No</button>
+            <button class="yes-button" onclick="updateScore(true)">Yes</button>
+            <button class="no-button" onclick="updateScore(false)">No</button>
         </div>
+        <div id="scoreContainer">
+            <strong>Score:</strong><span id="score">0</span>
+        </div>
+        <div id="resultMessage" class="result-message"></div>
     </div>
 </div>
-
     <script>
         let score = 0;
         let emailCount = 0;
@@ -68,13 +151,18 @@
             const response = await fetch('/emails.json');
             return response.json();
         }
-
+        function showResult(isCorrect) {
+        const resultMessage = document.getElementById('resultMessage');
+        resultMessage.style.display = 'block';
+        resultMessage.textContent = isCorrect ? 'Correct!' : 'Wrong!';
+        resultMessage.className = 'result-message ' + (isCorrect ? 'correct' : 'incorrect');
+    }
         function updateScore(isCorrect) {
             if (isCorrect) {
                 score++;
-                alert("Correct!");
+                showResult(true);
             } else {
-                alert("Wrong!");
+                showResult(false);
             }
             document.getElementById("score").textContent = score.toString();
             generateEmail();
