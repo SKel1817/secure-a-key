@@ -1,5 +1,5 @@
 
-# Secure-A-Key: Security basics for End users
+# Secure-A-Key: Security basics for End users ![Logo](/static/logo.png)
 
 This web application serves as an educational tool for teaching end users about the importance of secure online practices and how to avoid falling for common scams. Through interactive games and simulations, users can learn about creating strong passwords, the benefits of two-factor authentication, and identifying phishing emails.
 
@@ -25,15 +25,25 @@ These instructions will help you get a copy of the project up and running on you
 2. Navigate to the project directory in a terminal.
 3. Install the required Python packages:
 
+for windows
 ```bash
-pip install Flask
-```
+python -m vevn .venv
 
+pip install -r requirements.txt
+
+.venv\Scripts\Activate.ps1
+```
+for linux
+```bash
+python -m venv .venv
+
+pip install -r requirementx.txt
+
+source .venv/bin/activate
+```
 4. Start the Flask server:
 
 ```bash
-export FLASK_APP=app.py
-export FLASK_ENV=development
 flask run
 ```
 

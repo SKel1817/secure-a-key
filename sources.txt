@@ -1,2 +1,7 @@
 for flask set-up: https://code.visualstudio.com/docs/python/tutorial-flask
 https://codeforgeek.com/render-html-file-in-flask/
+https://connect.comptia.org/blog/cyber-security-stats-facts
+https://succulentmarket.com/blogs/care/20-amazing-facts-about-the-cactus
+chat.openai.com
+https://youtu.be/-RBE_x67kDM?si=CyK2-GWwCgRJhDPU
+https://en.wikipedia.org/wiki/Wikipedia:10,000_most_common_passwords
