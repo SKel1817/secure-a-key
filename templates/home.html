@@ -16,51 +16,69 @@
       }
 
       button {
-        background: transparent;
+        background: Transparent;
         border: none;
         font-size: 0;
       }
 
       .lScreen {
         position: absolute;
-        left: 22.5%;
-        top: 22%;
-        height: 27%;
-        width: 26%;
+        left: 332px;
+        top: 165px;
+        height: 195px;
+        width: 375px;
         transform: rotate(-2deg);
       }
 
       .rScreen {
         position: absolute;
-        left: 51%;
-        top: 21%;
-        height: 27%;
-        width: 27%;
+        left: 748px;
+        top: 157px;
+        height: 198px;
+        width: 382px;
       }
 
       .phone {
         position: absolute;
-        left: 19.5%;
-        top: 71%;
-        height: 14%;
-        width: 4.3%;
+        left: 278px;
+        top: 529px;
+        height: 105px;
+        width: 70px;
       }
 
       .books {
         position: absolute;
-        left: 64%;
-        top: 59%;
-        height: 7%;
-        width: 7%;
+        left: 933px;
+        top: 441px;
+        height: 52px;
+        width: 100px;
+      }
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
       }
     </style>
     <title>Secure-A-Key</title>
   </head>
   <body>
-    <button type="button" class="lScreen"></button>
-    <button type="button" class="rScreen"></button>
-    <button type="button" class="phone"></button>
-    <button type="button" class="books"></button>
+    <button type="button" class="lScreen">
+        <span class="visually-hidden">Play Phishing Mini Game</span>
+    </button>
+    <button type="button" class="rScreen">
+        <span class="visually-hidden">Play Password Builder</span>
+    </button>
+    <button type="button" class="phone">
+        <span class="visually-hidden">Play Two-Factor Authentication Game</span>
+    </button>
+    <button type="button" class="books">
+        <span class="visually-hidden">Play Secure-A-Key</span>
+    </button>
 
     <script>
       document.querySelector(".lScreen").addEventListener("click", function () {
