@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity & Cactus</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #327a5e;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        /* footer {
+            background-color: #327a5e;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        } */
+        #fun-facts {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cactus corner</h1>
+    </header>
+
+    <section id="cyber-cactus">
+        <h2>How Cybersecurity is Like a Cactus</h2>
+        <p>Hello User! it's me! Cyber the Cactus masot of Secure-A-key, Cybersecurity, much like a cactus, has layers of protection. Thorns protect a cactus from predators, similar to how firewalls protect against cyber threats.
+        
+        </p>
+        <button onclick="toggleFunFacts()">Show Fun Facts</button>
+    </section>
+
+    <section id="fun-facts">
+        <h2>Fun Facts About Cacti and Cybersecurity</h2>
+        <ul>
+            <li>Did you know that the tallest cactus ever measured was over 78 feet tall? Imagine stacking 12 giraffes!</li>
+            <li>The first recorded computer virus was called "Creeper" and was detected in the early 1970s. Imagine if it was named "Prickly Pear"!</li>
+        </ul>
+    </section>
+
+    <!-- <footer>
+        <p>© 2024 Cybersecurity & Cactus. All rights reserved.</p>
+    </footer> -->
+
+    <script>
+        function toggleFunFacts() {
+            var funFactsSection = document.getElementById("fun-facts");
+            if (funFactsSection.style.display === "none") {
+                funFactsSection.style.display = "block";
+            } else {
+                funFactsSection.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
