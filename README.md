@@ -1,5 +1,5 @@
 
-# Secure-A-Key: Security basics for End users ![Logo](/static/Secure-A-Key.png)
+# Secure-A-Key: Security basics for End users 
 
 This web application serves as an educational tool for teaching end users about the importance of secure online practices and how to avoid falling for common scams. Through interactive games and simulations, users can learn about creating strong passwords, the benefits of two-factor authentication, and identifying phishing emails.
 
