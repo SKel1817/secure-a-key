@@ -78,12 +78,12 @@
         {
             "subject": "(no subject)",
             "body": "We got $ 750 for any Female that doesn't have a Butterfly tattoo.\nSing Up & Get paid Now",
-            "isPhishing": true
+            "isPhishing": false
         },
         {
             "subject": "Invitation to join pert time job",
             "body": "Hi {FNAME},\nTo assist you with completing your degrees in a timely manner, OU students are encouraged to seek employment while studying and take advantage of having a job that works around your academic schedule and pays competitively.",
-            "isPhishing": true
+            "isPhishing": false
         }
     ]
 }
