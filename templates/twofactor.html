@@ -2,56 +2,135 @@
 <html>
 <head>
     <title>Two-Factor Authentication Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Add your CSS styling here */
-        .success { color: green; }
-        .failure { color: red; }
-        #twoFactorSection { display: none; } /* Initially hide the 2FA section */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: rgb(116,117,136);
+            background: linear-gradient(90deg, rgba(116,117,136,1) 6%, rgba(190,198,206,1) 49%, rgba(180,192,212,1) 93%);
+            color: #333;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container, .info {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 10px;
+        }
+        .container {
+            flex-grow: 1;
+            max-width: 400px;
+        }
+        .info {
+            flex-basis: 300px;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        p, input, button {
+            margin-bottom: 16px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .success, .failure {
+            text-align: center;
+        }
+        #twoFactorSection, #giveUpSection {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <h2>Two-Factor Authentication Simulator</h2>
-    
-    <div id="loginForm">
-        <p>Enter password:</p>
-        <input type="password" id="password">
-        
-        <button onclick="checkPassword()">Submit Password</button>
+    <div class="info">
+        <h2>Why Two-Factor Authentication?</h2>
+        <p>Two-Factor Authentication (2FA) adds an extra layer of security to your online accounts by requiring not just a password, but also a second factor, such as a code sent to your phone. This makes it much harder for unauthorized users to access your accounts.</p>
+        <p><b>Different 2FA Solutions:</b></p>
+        <ul>
+            <li>Text message or SMS codes</li>
+            <li>Authentication apps (e.g., Google Authenticator, Authy)</li>
+            <li>Physical security keys</li>
+        </ul>
+        <p>The password for this simulation is <b>correctPassword</b>. Try to guess the 2FA code—you'll find it's not so easy without knowing it!</p>
     </div>
-    
-    <div id="twoFactorSection">
-        <p>Enter 2FA code:</p>
-        <input type="text" id="code">
+
+    <div class="container">
+        <h2>Two-Factor Authentication Simulator</h2>
+
+        <div id="loginForm">
+            <p>Enter password:</p>
+            <input type="password" id="password">
+            
+            <button onclick="checkPassword()">Submit Password</button>
+        </div>
         
-        <button onclick="attemptLogin()">Attempt Login</button>
+        <div id="twoFactorSection">
+            <p>Enter 2FA code:</p>
+            <input type="text" id="code">
+            
+            <button onclick="attemptLogin()">Attempt Login</button>
+        </div>
+
+        <div id="giveUpSection">
+            <button onclick="revealCode()">Give Up</button>
+        </div>
+        
+        <div id="result"></div>
     </div>
-    
-    <div id="result"></div>
     
     <script>
+        let secretCode = Math.floor(100000 + Math.random() * 900000); // Generate a random 6-digit code
+
         function checkPassword() {
             const password = document.getElementById("password").value;
             
-            // Simplified check for demonstration (normally, this would be more secure)
-            if(password == "correctPassword") {
-                // If password is correct, show the 2FA section
+            if(password === "correctPassword") {
+                document.getElementById("loginForm").style.display = "none";
                 document.getElementById("twoFactorSection").style.display = "block";
+                document.getElementById("giveUpSection").style.display = "block";
+                document.getElementById("result").innerHTML = "";
             } else {
-                // If password is incorrect, show an error and keep the 2FA section hidden
                 document.getElementById("result").innerHTML = "<p class='failure'>Incorrect password. Please try again.</p>";
-                document.getElementById("twoFactorSection").style.display = "none";
             }
         }
 
         function attemptLogin() {
             const code = document.getElementById("code").value;
             
-            // Simplified check for demonstration
-            if(code === "123456") {
+            if(code === secretCode.toString()) {
                 document.getElementById("result").innerHTML = "<p class='success'>Login successful!</p>";
+                document.getElementById("twoFactorSection").style.display = "none";
+                document.getElementById("giveUpSection").style.display = "none";
             } else {
-                document.getElementById("result").innerHTML = "<p class='failure'>Incorrect 2FA code.</p>";
+                document.getElementById("result").innerHTML = "<p class='failure'>Incorrect 2FA code. Try again or give up.</p>";
             }
+        }
+
+        function revealCode() {
+            document.getElementById("result").innerHTML = `<p class='failure'>The 2FA code was ${secretCode}. Refresh the page to start over. or go back to homescreen</p><button onclick="window.location.href = '/'">Go back to homescreen</button>`;
+            document.getElementById("twoFactorSection").style.display = "none";
+            document.getElementById("giveUpSection").style.display = "none";
         }
     </script>
 </body>
