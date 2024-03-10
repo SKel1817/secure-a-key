@@ -122,8 +122,8 @@
           <p>
             Read the email and decide if it's a phishing email or not. Click
             "Yes" if it's a phishing email, and "No" if it's not. You will get
-            10 emails. To move on, you need to correctly identify at least 7 out
-            of 10. If you correctly identify all 10, you will earn a badge!
+            12 emails. To move on, you need to correctly identify at least 9 out
+            of 12. If you correctly identify all 12, you will earn a badge!
           </p>
           <p>Here are some ways to identify phishing emails:</p>
           <ul>
@@ -185,10 +185,24 @@
 
       async function generateEmail() {
         if (emailCount >= 12) {
-          alert("Congrats! You completed the phishing mini game. Your final score was " + score + "/12.");
-          window.location.href = "/";
-          return;
+          if (score >= 9) {
+            alert("Congrats! You completed the phishing mini game. Your final score was " + score + "/12!");
+            window.location.href = "/";
+            return;
+          }
+          else {
+            alert("You did not score high enough to pass the phishing mini game. Your final score was " + score + "You need a least a score of 7 to pass. Please try again.");
+            window.location.href = "/phising_mini_game";
+            return;
+          }
         }
+
+        // async function generateEmail() {
+        //   if (emailCount >= 12) {
+        //     alert("Congrats! You completed the phishing mini game. Your final score was " + score + "/12.");
+        //     window.location.href = "/";
+        //     return;
+        //   }
 
         const { emails } = await fetchEmails();
         let randomIndex = Math.floor(Math.random() * emails.length);
