@@ -16,7 +16,7 @@
       }
 
       button {
-        background: transparent;
+        background: White;
         border: none;
         font-size: 0;
       }
@@ -57,6 +57,31 @@
         height: 7%;
         width: 7%;
       }
+
+      .monkeyType {
+        position: absolute;
+        left: 41%;
+        top: 75%;
+        height: 7%;
+        width: 18%;
+      }
+
+      .aimTrainer {
+        position: absolute;
+        left: 63%;
+        top: 78%;
+        height: 7%;
+        width: 4%;
+      }
+
+      .plant {
+        position: absolute;
+        left: 36%;
+        top: 56%;
+        height: 10%;
+        width: 3%;
+      }
+
       .visually-hidden {
         position: absolute;
         width: 1px;
@@ -83,6 +108,15 @@
     <button type="button" class="books">
       <span class="visually-hidden">Play Secure-A-Key</span>
     </button>
+    <button type="button" class="monkeyType">
+      <span class="visually-hidden">MonkeyType</span>
+    </button>
+    <button type="button" class="aimTrainer">
+      <span class="visually-hidden">AimTrainer</span>
+    </button>
+    <button type="button" class="plant">
+      <span class="visually-hidden">Plant</span>
+    </button>
 
     <script>
       document.querySelector(".lScreen").addEventListener("click", function () {
@@ -95,6 +129,19 @@
         window.location.href = "/twofactor";
       });
       document.querySelector(".books").addEventListener("click", function () {
+        window.location.href = "/moreinfo";
+      });
+      document
+        .querySelector(".monkeyType")
+        .addEventListener("click", function () {
+          URL = "https://monkeytype.com/";
+        });
+      document
+        .querySelector(".aimTrainer")
+        .addEventListener("click", function () {
+          URL = "https://www.aimtrainer.io/";
+        });
+      document.querySelector(".plant").addEventListener("click", function () {
         window.location.href = "/moreinfo";
       });
     </script>
