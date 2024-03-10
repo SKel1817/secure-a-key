@@ -48,7 +48,7 @@
         margin-bottom: 20px;
       }
       .email-subject,
-      .email-body {
+      .email-body, .email-sender {
         text-align: left;
         padding: 15px;
         background: #f9f9f9;
@@ -112,6 +112,11 @@
         transform: translatex(221px) translatey(-149px);
         background-color: #cdd9d9;
       }
+      /* Email content */
+    .email-client-container .email-content{
+    transform:translatex(230px) translatey(-179px);
+    }
+
     </style>
   </head>
   <body>
@@ -144,6 +149,7 @@
       </div>
 
       <div class="email-content">
+        <div class="email-sender" id="emailSender">Sender goes here...</div>
         <div class="email-subject" id="emailSubject">Subject goes here...</div>
         <div class="email-body" id="emailBody">Body content goes here...</div>
         <div class="decision-buttons">
@@ -215,6 +221,7 @@
         emailCount++;
 
         const email = emails[randomIndex];
+        document.getElementById("emailSender").textContent = email.sender;
         document.getElementById("emailSubject").textContent = email.subject;
         document.getElementById("emailBody").textContent = email.body;
 

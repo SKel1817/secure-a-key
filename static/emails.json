@@ -1,109 +1,109 @@
 {
     "emails": [
-        {
-            "sender": "no-reply@opentable.com",
+                {
+                    "sender": "no-reply@opentable.com",
                     "subject": "Reservation Confirmation",
                     "body": "Get ready, your reservation is tomorrow, Monday at 6pm at 123 Washington Rd. .\n\nConfirm your reservation?",
                     "isPhishing": false
                 },
                 {
-            "sender": "noreply@info.tacobell.com",
+                    "sender": "noreply@info.tacobell.com",
                     "subject": "Thanks for ordering from Taco Bell",
                     "body": "Pick up your order at the drive-through. At 1234 Washington Rd. City, AB 12345.\nOrder #123456\nTotal: $10.00 ",
                     "isPhishing": false
                 },
                 {
-            "sender": "help@stickermule.com",
+                    "sender": "help@stickermule.com",
                     "subject": "Your order shipped! A12345678",
                     "body": "Your order A12345678 has shipped\n Items from your order have shipped and are on the way! Your order is expected to arrive by January 1st. Shipped via UPS with tracking number 1AB23456789",
                     "isPhishing": false
                 },
                 {
-            "sender": "no-reply@accounts.google.com",
+                    "sender": "no-reply@accounts.google.com",
                     "subject": "Security alert",
                     "body": "App password created to sign in to your account name@email.com.\nIf you didn't generate this password, someone might be using your account. Check and secure your account now.",
                     "isPhishing": false
                 },
                 {
-            "sender": "notification@slack.com",
+                    "sender": "notification@slack.com",
                     "subject": "Slack ",
                     "body": "Confirm your email address to get started on Slack.\nOnce you’ve confirmed that name@email.com is your email address, we’ll help you find your Slack workspaces or create a new one.\nIf you didn’t request this email, there’s nothing to worry about — you can safely ignore it.",
                     "isPhishing": false
                 },
                 {
-            "sender": "no-reply@canva.com",
+                    "sender": "no-reply@canva.com",
                     "subject": "Your Canva Invoice",
                     "body": "Your Invoice\n\nThank you fro your purchase! Your invoice details are below:\nINVOICE: 12345-12345678\nDATE OF ISSUE: Jan 12,2024\nBRAND ID: ABCdefjHi1k\nBILLED TO: Card (Visa - 1234)\n\nDetails\n\nITEM: Subscription charges\nAMOUNT: $12.99",
                     "isPhishing": false
                 },
                 {
-            "sender": "noreply@umail.accounts.riotgames.com",
+                    "sender": "noreply@umail.accounts.riotgames.com",
                     "subject": "Welcome to Riot Games!",
                     "body": "Welcome to Riot Games!\n\nJohnSmith\n\nThis is your username to sign in to all Riot games.\n\nFollow the links if you need to make changes to your account or forget your password.\n\nGLHF,\nRiot Games",
                     "isPhishing": false
                 },
                 {
-            "sender": "linkedin@e.linkedin.com",
+                    "sender": "linkedin@e.linkedin.com",
                     "subject": "Thanks for checking us out",
                     "body": "Hi John,\n\nThanks for being a valued LinkedIn member. To show our appreciation, we'd like to give you one free month of LinkedIn Premium. You'll get access to:\n\nLinkedIn Learning: Hone your skills with over 21,000+ expert-led courses.\n15 InMail messages: Contact anyone on LinkedIn, even if they're outside your network.\nWho's Viewed Your Profile: Know who's looked at your profile in the last 365 days*.\nCompetitive Insights: Access Premium insights on company pages to see industry trends.\n\nGet your free month. Cancel anytime",
                     "isPhishing": false
                 },
                 {
-            "sender": "noreply@github.com",
+                    "sender": "noreply@github.com",
                     "subject": "[GitHub] Please verify your email address.",
                     "body": "Almost done!\n\nTo secure your GitHub account, we just need to verify your email address: johnsmith@email.com",
                     "isPhishing": false
                 },
             {
-            "sender": "sethperezbmxn3@gmail.com",
+                    "sender": "sethperezbmxn3@gmail.com",
                     "subject": "Your Invoice Avaiable Now",
                     "body": "Hi.\nThank your for your purchase. Youre bill for $268.99 was due recently.\nTo view your bill download the attached pdf.",
                     "isPhishing": true
                 },
                 {
-            "sender": "albertjonesfmi39@gmail.com",
+                    "sender": "albertjonesfmi39@gmail.com",
                     "subject": "Account Upgrade",
                     "body": "Dear User,\nYou have been upgraded to a premium account. To activate, sign-in to your account here. https://login.live.com ",
                     "isPhishing": true
                 },
                 {
-            "sender": "gregorybarronn6@gmail.com",
+                    "sender": "gregorybarronn6@gmail.com",
                     "subject": "IMPORTANT: Verification Required",
                     "body": "USPS: We have issues with your shipping address. Please follow this link to input a valid address.",
                     "isPhishing": true
                 },
                 {
-            "sender": "fitzgeraldlarsenppuy0@gmail.com",
+                    "sender": "fitzgeraldlarsenppuy0@gmail.com",
                     "subject": "Support Center : Tax Refund",
                     "body": "Hello\nWe have dertermined that you are eligible to receive a tax refund of $349.03 USD. Please Click Refund and Submit The Tax Refund Request.",
                     "isPhishing": true
                 },
                 {
-            "sender": "vincentkellyflz12@gmail.com",
+                    "sender": "vincentkellyflz12@gmail.com",
                     "subject": "Account Termination Notice",
                     "body": "Dear user, we regret to inform you that your account will be terminated due to violation of our terms of service.",
                     "isPhishing": true
                 },
                 {
-            "sender": "<HR@company.com> via registrar-servers.com",
+                    "sender": "<HR@company.com> via registrar-servers.com",
                     "subject": "Announcement",
                     "body": "Greetings,\n\nYou have a message from Human Resources. Please take a moment to visit the link below to view the message.",
                     "isPhishing": true
                 },
                 {
-            "sender": "kenyadaughertypzvq123@gmail.com",
+                    "sender": "kenyadaughertypzvq123@gmail.com",
                     "subject": "a document for your review",
                     "body": "A document has been shared to your account. Click Here",
                     "isPhishing": true
                 },
                 {
-            "sender": "kumar776396@gmail.com",
+                    "sender": "kumar776396@gmail.com",
                     "subject": "(no subject)",
                     "body": "We got $ 750 for any Female that doesn't have a Butterfly tattoo.\nSing Up & Get paid Now",
                     "isPhishing": true
                 },
                 {
-            "sender": "kumarin8750@gmail.com",
+                    "sender": "kumarin8750@gmail.com",
                     "subject": "Invitation to join pert time job",
                     "body": "Hi {FNAME},\nTo assist you with completing your degrees in a timely manner, students are encouraged to seek employment while studying and take advantage of having a job that works around your academic schedule and pays competitively. Student employment opportunities here.",
                     "isPhishing": true
