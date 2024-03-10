@@ -57,17 +57,24 @@
     <title>Secure-A-Key</title>
   </head>
   <body>
-    <a href="./passwordBuilder.html">
-      <button type="button" class="lScreen">TEMP</button>
-    </a>
-    <a href="./passwordTest.html">
-    <button type="button" class="rScreen">TEMP</button>
-    </a>
-    <a href="./twofactor.html">
-    <button type="button" class="phone">TEMP</button>
-    </a>
-    <a href="">
-    <button type="button" class="books">TEMP</button>
-    </a>  
+    <button type="button" class="lScreen"></button>
+    <button type="button" class="rScreen"></button>
+    <button type="button" class="phone"></button>
+    <button type="button" class="books"></button>
+
+    <script>
+      document.querySelector(".lScreen").addEventListener("click", function () {
+        window.location.href = "/passwordBuilder";
+      });
+      document.querySelector(".rScreen").addEventListener("click", function () {
+        window.location.href = "/passwordTest";
+      });
+      document.querySelector(".phone").addEventListener("click", function () {
+        window.location.href = "/twofactor";
+      });
+      document.querySelector(".books").addEventListener("click", function () {
+        window.location.href = "";
+      });
+    </script>
   </body>
 </html>
