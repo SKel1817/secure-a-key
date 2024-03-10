@@ -16,42 +16,46 @@
       }
 
       button {
-        background: Transparent;
+        background: transparent;
         border: none;
         font-size: 0;
       }
 
+      button:hover {
+        cursor: grab;
+      }
+
       .lScreen {
         position: absolute;
-        left: 332px;
-        top: 165px;
-        height: 195px;
-        width: 375px;
+        left: 22.5%;
+        top: 22%;
+        height: 27%;
+        width: 26%;
         transform: rotate(-2deg);
       }
 
       .rScreen {
         position: absolute;
-        left: 748px;
-        top: 157px;
-        height: 198px;
-        width: 382px;
+        left: 51%;
+        top: 21%;
+        height: 27%;
+        width: 27%;
       }
 
       .phone {
         position: absolute;
-        left: 278px;
-        top: 529px;
-        height: 105px;
-        width: 70px;
+        left: 19.5%;
+        top: 71%;
+        height: 14%;
+        width: 4.3%;
       }
 
       .books {
         position: absolute;
-        left: 933px;
-        top: 441px;
-        height: 52px;
-        width: 100px;
+        left: 64%;
+        top: 59%;
+        height: 7%;
+        width: 7%;
       }
       .visually-hidden {
         position: absolute;
@@ -68,16 +72,16 @@
   </head>
   <body>
     <button type="button" class="lScreen">
-        <span class="visually-hidden">Play Phishing Mini Game</span>
+      <span class="visually-hidden">Play Phishing Mini Game</span>
     </button>
     <button type="button" class="rScreen">
-        <span class="visually-hidden">Play Password Builder</span>
+      <span class="visually-hidden">Play Password Builder</span>
     </button>
     <button type="button" class="phone">
-        <span class="visually-hidden">Play Two-Factor Authentication Game</span>
+      <span class="visually-hidden">Play Two-Factor Authentication Game</span>
     </button>
     <button type="button" class="books">
-        <span class="visually-hidden">Play Secure-A-Key</span>
+      <span class="visually-hidden">Play Secure-A-Key</span>
     </button>
 
     <script>
