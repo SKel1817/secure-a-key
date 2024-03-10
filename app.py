@@ -37,6 +37,9 @@ def simulate_cracking_time(password):
 def twofactor():
     return render_template('twofactor.html')
 
+@app.route('/moreinfo')
+def moreinfo():
+    return render_template('moreinfo.html')
 
 if __name__ == '__main__':
     serve(app, host='0.0.0.0', port=80)
